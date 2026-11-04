@@ -15,49 +15,90 @@ export async function POST(request: Request) {
       );
     }
 
-    const ipAddress =
+    const trimmedEmail = email.trim();
+    const trimmedName = (name || '').trim();
+    const trimmedSubject = (subject || '').trim();
+    const trimmedMessage = (message || '').trim();
+
+    const clientIp =
       request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
       request.headers.get('x-real-ip') ||
       undefined;
 
-    const payload = {
+    const hsContext = {
+      pageUrl: 'https://aiforbusinesshub.com/contact',
+      pageName: 'Contact Us | AIForBusinessHub',
+      ...(clientIp ? { ipAddress: clientIp } : {}),
+      ...(hutk ? { hutk } : {}),
+    };
+
+    // 1. Submit via HubSpot Form Upload API (v2) - natively creates contact and populates form submissions
+    const v2Params = new URLSearchParams();
+    v2Params.append('firstname', trimmedName);
+    v2Params.append('name', trimmedName);
+    v2Params.append('email', trimmedEmail);
+    v2Params.append('aiforbusiness_subject', trimmedSubject);
+    v2Params.append('subject', trimmedSubject);
+    v2Params.append('aiforbusiness_message', trimmedMessage);
+    v2Params.append('message', trimmedMessage);
+    v2Params.append('hs_context', JSON.stringify(hsContext));
+
+    const v2Promise = fetch(
+      `https://forms.hubspot.com/uploads/form/v2/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: v2Params.toString(),
+      }
+    );
+
+    // 2. Submit via HubSpot Form Submissions API (v3) with exact custom property names
+    const v3Payload = {
+      submittedAt: Date.now(),
       fields: [
-        { name: 'email', value: email.trim() },
-        { name: 'firstname', value: (name || '').trim() },
-        { name: 'name', value: (name || '').trim() },
-        { name: 'subject', value: (subject || '').trim() },
-        { name: 'message', value: (message || '').trim() },
+        { name: 'firstname', value: trimmedName },
+        { name: 'name', value: trimmedName },
+        { name: 'email', value: trimmedEmail },
+        { name: 'aiforbusiness_subject', value: trimmedSubject },
+        { name: 'subject', value: trimmedSubject },
+        { name: 'aiforbusiness_message', value: trimmedMessage },
+        { name: 'message', value: trimmedMessage },
       ],
       context: {
         pageUri: 'https://aiforbusinesshub.com/contact',
         pageName: 'Contact Us | AIForBusinessHub',
-        ...(ipAddress ? { ipAddress } : {}),
+        ...(clientIp ? { ipAddress: clientIp } : {}),
         ...(hutk ? { hutk } : {}),
       },
     };
 
-    const hsResponse = await fetch(
+    const v3Promise = fetch(
       `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(v3Payload),
       }
     );
 
-    if (!hsResponse.ok) {
-      const errText = await hsResponse.text();
-      console.error('HubSpot API submission error:', hsResponse.status, errText);
+    const [v2Res, v3Res] = await Promise.allSettled([v2Promise, v3Promise]);
+
+    const v2Ok = v2Res.status === 'fulfilled' && (v2Res.value.status === 204 || v2Res.value.ok);
+    const v3Ok = v3Res.status === 'fulfilled' && v3Res.value.ok;
+
+    if (!v2Ok && !v3Ok) {
+      console.error('Both HubSpot endpoints failed:', { v2Res, v3Res });
       return NextResponse.json(
         { error: 'Failed to record lead in HubSpot.' },
-        { status: hsResponse.status }
+        { status: 502 }
       );
     }
 
-    const result = await hsResponse.json().catch(() => ({}));
-    return NextResponse.json({ success: true, result });
+    return NextResponse.json({ success: true });
   } catch (error: unknown) {
     console.error('Contact API error:', error);
     return NextResponse.json(
