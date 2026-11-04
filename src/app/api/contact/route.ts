@@ -15,16 +15,23 @@ export async function POST(request: Request) {
       );
     }
 
+    const ipAddress =
+      request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+      request.headers.get('x-real-ip') ||
+      undefined;
+
     const payload = {
       fields: [
         { name: 'email', value: email.trim() },
         { name: 'firstname', value: (name || '').trim() },
+        { name: 'name', value: (name || '').trim() },
         { name: 'subject', value: (subject || '').trim() },
         { name: 'message', value: (message || '').trim() },
       ],
       context: {
         pageUri: 'https://aiforbusinesshub.com/contact',
         pageName: 'Contact Us | AIForBusinessHub',
+        ...(ipAddress ? { ipAddress } : {}),
         ...(hutk ? { hutk } : {}),
       },
     };
@@ -44,7 +51,7 @@ export async function POST(request: Request) {
       const errText = await hsResponse.text();
       console.error('HubSpot API submission error:', hsResponse.status, errText);
       return NextResponse.json(
-        { error: 'Failed to submit inquiry to HubSpot.' },
+        { error: 'Failed to record lead in HubSpot.' },
         { status: hsResponse.status }
       );
     }
@@ -52,9 +59,9 @@ export async function POST(request: Request) {
     const result = await hsResponse.json().catch(() => ({}));
     return NextResponse.json({ success: true, result });
   } catch (error: unknown) {
-    console.error('Contact API server error:', error);
+    console.error('Contact API error:', error);
     return NextResponse.json(
-      { error: 'An unexpected error occurred while transmitting inquiry.' },
+      { error: 'An unexpected error occurred while processing the lead.' },
       { status: 500 }
     );
   }
