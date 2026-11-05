@@ -136,7 +136,14 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-10 shadow-xs space-y-6">
+    <form
+      id="ai-for-business-leads"
+      name="Ai for Business Leads"
+      data-form-name="Ai for Business Leads"
+      onSubmit={handleSubmit}
+      noValidate
+      className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-10 shadow-xs space-y-6"
+    >
       {serverError && (
         <div className="p-4 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm flex items-start gap-2.5">
           <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
