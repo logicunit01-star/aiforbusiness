@@ -1,0 +1,7 @@
+/blogs/* /#articles 301
+/blogs /#articles 301
+/work-with-pro/* /contact 301
+/work-with-pro /contact 301
+/authors/* /contact 301
+/authors /contact 301
+/author/* /contact 301

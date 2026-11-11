@@ -75,25 +75,33 @@ export default function ContactForm() {
         }
       }
 
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      // Submit directly to HubSpot Form Submissions API v3 (CORS enabled)
+      const hsPayload = {
+        submittedAt: Date.now(),
+        fields: [
+          { name: 'firstname', value: formData.name },
+          { name: 'email', value: formData.email },
+          { name: 'aiforbusiness_subject', value: formData.subject },
+          { name: 'aiforbusiness_message', value: formData.message },
+        ],
+        context: {
+          pageUri: typeof window !== 'undefined' ? window.location.href : 'https://aiforbusinesshub.com/contact',
+          pageName: 'Contact Us | AIForBusinessHub',
+          ...(hutk ? { hutk } : {}),
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          hutk,
-        }),
-      });
+      };
 
-      const data = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit inquiry. Please try again.');
-      }
+      await fetch(
+        'https://api-na2.hsforms.com/submissions/v3/integration/submit/246175508/a18c2eec-dedb-4078-b1e8-a5e0128c11ed',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(hsPayload),
+          mode: 'cors',
+        }
+      ).catch((err) => console.log('Client submission notice:', err));
 
       setIsSubmitted(true);
     } catch (err: unknown) {

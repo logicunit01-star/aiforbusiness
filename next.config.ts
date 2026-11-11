@@ -1,15 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    rules: {
-      '*.css': {
-        loaders: ['@tailwindcss/turbopack'],
-        as: '*.css',
-      },
-    },
-  },
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -17,44 +11,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: '/blogs',
-        destination: '/#articles',
-        permanent: true,
+  turbopack: {
+    rules: {
+      '*.css': {
+        loaders: ['@tailwindcss/turbopack'],
+        as: '*.css',
       },
-      {
-        source: '/blogs/:path*',
-        destination: '/#articles',
-        permanent: true,
-      },
-      {
-        source: '/work-with-pro',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/work-with-pro/:path*',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/authors',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/authors/:path*',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/author/:slug*',
-        destination: '/contact',
-        permanent: true,
-      },
-    ];
+    },
   },
 };
 
