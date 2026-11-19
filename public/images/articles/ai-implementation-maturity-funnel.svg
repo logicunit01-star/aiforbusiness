@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="pocGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="pilotGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="prodGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+
+  <!-- Grid lines -->
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135" />
+    <line x1="0" y1="270" x2="1200" y2="270" />
+    <line x1="0" y1="405" x2="1200" y2="405" />
+    <line x1="0" y1="540" x2="1200" y2="540" />
+    <line x1="200" y1="0" x2="200" y2="675" />
+    <line x1="400" y1="0" x2="400" y2="675" />
+    <line x1="600" y1="0" x2="600" y2="675" />
+    <line x1="800" y1="0" x2="800" y2="675" />
+    <line x1="1000" y1="0" x2="1000" y2="675" />
+  </g>
+
+  <!-- Header Banner -->
+  <g transform="translate(60, 40)">
+    <rect x="0" y="0" width="190" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <circle cx="12" cy="13" r="4" fill="#3b82f6" />
+    <text x="24" y="17" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1">MATURITY ROADMAP</text>
+
+    <text x="0" y="56" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.5">The 3 Stages of Business AI Implementation</text>
+    <text x="0" y="80" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="400">Stop launching immediately after Stage 1. Understand what each stage proves — and the gate criteria to advance.</text>
+  </g>
+
+  <!-- Flow Arrows connecting the 3 columns -->
+  <g transform="translate(405, 335)">
+    <circle cx="0" cy="0" r="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <path d="M -4 -6 L 4 0 L -4 6" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <g transform="translate(795, 335)">
+    <circle cx="0" cy="0" r="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <path d="M -4 -6 L 4 0 L -4 6" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Stage 1 Card: PoC (x: 60) -->
+  <g transform="translate(60, 140)">
+    <rect width="320" height="440" rx="16" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Top Accent Bar -->
+    <rect width="320" height="8" rx="4" fill="url(#pocGrad)" />
+
+    <!-- Stage Label & Header -->
+    <g transform="translate(24, 28)">
+      <rect x="0" y="0" width="70" height="22" rx="6" fill="#f59e0b" fill-opacity="0.15" />
+      <text x="35" y="15" text-anchor="middle" fill="#fbbf24" font-family="sans-serif" font-size="11" font-weight="700">STAGE 1</text>
+      <text x="0" y="48" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="800">Proof of Concept</text>
+      <text x="0" y="68" fill="#fbbf24" font-family="sans-serif" font-size="12" font-weight="600">Technical Feasibility</text>
+    </g>
+
+    <!-- Core Question -->
+    <g transform="translate(24, 115)">
+      <rect width="272" height="44" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="18" fill="#94a3b8" font-family="sans-serif" font-size="10" font-weight="700">CORE QUESTION:</text>
+      <text x="12" y="34" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="500">"Can the AI model perform this task?"</text>
+    </g>
+
+    <!-- Environment Specs -->
+    <g transform="translate(24, 175)">
+      <text x="0" y="16" fill="#fbbf24" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">ENVIRONMENT &amp; SCOPE</text>
+      <text x="0" y="38" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Duration: 1 to 2 weeks</text>
+      <text x="0" y="58" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Data: Clean synthetic or sample files</text>
+      <text x="0" y="78" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Users: Developers &amp; project lead</text>
+      <text x="0" y="98" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Cost: Under $100 in API credits</text>
+    </g>
+
+    <!-- Gate Criteria to pass -->
+    <g transform="translate(24, 305)">
+      <rect width="272" height="110" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1" />
+      <text x="12" y="22" fill="#fbbf24" font-family="sans-serif" font-size="11" font-weight="700">GATE CRITERIA TO ADVANCE:</text>
+      <text x="12" y="44" fill="#e2e8f0" font-family="sans-serif" font-size="11">✓ Basic reasoning works on test inputs</text>
+      <text x="12" y="64" fill="#e2e8f0" font-family="sans-serif" font-size="11">✓ Model limitations identified &amp; logged</text>
+      <text x="12" y="84" fill="#e2e8f0" font-family="sans-serif" font-size="11">✓ Decision to proceed, pivot, or stop</text>
+      <text x="12" y="100" fill="#f87171" font-family="sans-serif" font-size="10" font-weight="600">❌ NEVER launch directly to customers!</text>
+    </g>
+  </g>
+
+  <!-- Stage 2 Card: Pilot (x: 440) -->
+  <g transform="translate(440, 140)">
+    <rect width="320" height="440" rx="16" fill="url(#cardGrad)" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Top Accent Bar -->
+    <rect width="320" height="8" rx="4" fill="url(#pilotGrad)" />
+
+    <!-- Stage Label & Header -->
+    <g transform="translate(24, 28)">
+      <rect x="0" y="0" width="70" height="22" rx="6" fill="#3b82f6" fill-opacity="0.15" />
+      <text x="35" y="15" text-anchor="middle" fill="#60a5fa" font-family="sans-serif" font-size="11" font-weight="700">STAGE 2</text>
+      <text x="0" y="48" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="800">Business Pilot</text>
+      <text x="0" y="68" fill="#60a5fa" font-family="sans-serif" font-size="12" font-weight="600">Workflow &amp; Utility Validation</text>
+    </g>
+
+    <!-- Core Question -->
+    <g transform="translate(24, 115)">
+      <rect width="272" height="44" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="18" fill="#94a3b8" font-family="sans-serif" font-size="10" font-weight="700">CORE QUESTION:</text>
+      <text x="12" y="34" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="500">"Does this help real users in real work?"</text>
+    </g>
+
+    <!-- Environment Specs -->
+    <g transform="translate(24, 175)">
+      <text x="0" y="16" fill="#60a5fa" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">ENVIRONMENT &amp; SCOPE</text>
+      <text x="0" y="38" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Duration: 4 to 8 weeks</text>
+      <text x="0" y="58" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Data: Real business records (sandboxed)</text>
+      <text x="0" y="78" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Users: 5–20 real team members</text>
+      <text x="0" y="98" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Supervision: 100% human-in-the-loop</text>
+    </g>
+
+    <!-- Gate Criteria to pass -->
+    <g transform="translate(24, 305)">
+      <rect width="272" height="110" rx="8" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-opacity="0.3" stroke-width="1" />
+      <text x="12" y="22" fill="#60a5fa" font-family="sans-serif" font-size="11" font-weight="700">GATE CRITERIA TO ADVANCE:</text>
+      <text x="12" y="44" fill="#e2e8f0" font-family="sans-serif" font-size="11">✓ Task accuracy &gt;85% verified by team</text>
+      <text x="12" y="64" fill="#e2e8f0" font-family="sans-serif" font-size="11">✓ Human correction friction documented</text>
+      <text x="12" y="84" fill="#e2e8f0" font-family="sans-serif" font-size="11">✓ Cost per completed task calculated</text>
+      <text x="12" y="100" fill="#93c5fd" font-family="sans-serif" font-size="10" font-weight="600">✓ Security &amp; privacy audit approved</text>
+    </g>
+  </g>
+
+  <!-- Stage 3 Card: Production (x: 820) -->
+  <g transform="translate(820, 140)">
+    <rect width="320" height="440" rx="16" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Top Accent Bar -->
+    <rect width="320" height="8" rx="4" fill="url(#prodGrad)" />
+
+    <!-- Stage Label & Header -->
+    <g transform="translate(24, 28)">
+      <rect x="0" y="0" width="70" height="22" rx="6" fill="#10b981" fill-opacity="0.15" />
+      <text x="35" y="15" text-anchor="middle" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="700">STAGE 3</text>
+      <text x="0" y="48" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="800">Production Scale</text>
+      <text x="0" y="68" fill="#34d399" font-family="sans-serif" font-size="12" font-weight="600">Reliable Operations &amp; ROI</text>
+    </g>
+
+    <!-- Core Question -->
+    <g transform="translate(24, 115)">
+      <rect width="272" height="44" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="18" fill="#94a3b8" font-family="sans-serif" font-size="10" font-weight="700">CORE QUESTION:</text>
+      <text x="12" y="34" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="500">"Can we run this reliably at positive ROI?"</text>
+    </g>
+
+    <!-- Environment Specs -->
+    <g transform="translate(24, 175)">
+      <text x="0" y="16" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">ENVIRONMENT &amp; SCOPE</text>
+      <text x="0" y="38" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Duration: Ongoing continuous operation</text>
+      <text x="0" y="58" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Data: Live enterprise databases &amp; sync</text>
+      <text x="0" y="78" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Users: Enterprise employees or customers</text>
+      <text x="0" y="98" fill="#cbd5e1" font-family="sans-serif" font-size="12">• Telemetry: Full APM, latency &amp; cost alerts</text>
+    </g>
+
+    <!-- Gate Criteria to pass -->
+    <g transform="translate(24, 305)">
+      <rect width="272" height="110" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+      <text x="12" y="22" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="700">OPERATIONAL CAPABILITIES:</text>
+      <text x="12" y="44" fill="#e2e8f0" font-family="sans-serif" font-size="11">✓ RBAC &amp; Least-Privilege access enforced</text>
+      <text x="12" y="64" fill="#e2e8f0" font-family="sans-serif" font-size="11">✓ Circuit breaker &amp; automated fallback active</text>
+      <text x="12" y="84" fill="#e2e8f0" font-family="sans-serif" font-size="11">✓ Business &amp; technical owners assigned</text>
+      <text x="12" y="100" fill="#6ee7b7" font-family="sans-serif" font-size="10" font-weight="600">✓ Positive EBIT / net cost savings verified</text>
+    </g>
+  </g>
+
+  <!-- Bottom Global Takeaway Bar -->
+  <g transform="translate(60, 605)">
+    <rect width="1080" height="42" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="540" y="26" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">
+      <tspan fill="#34d399" font-weight="700">Executive Rule:</tspan> The PoC tests feasibility. The Pilot tests usability. Production guarantees reliability and economic viability.
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="step1Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient>
+    <linearGradient id="step2Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#0284c7"/></linearGradient>
+    <linearGradient id="step3Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#4f46e5"/></linearGradient>
+    <linearGradient id="step4Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="step5Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ec4899"/><stop offset="100%" stop-color="#db2777"/></linearGradient>
+    <linearGradient id="step6Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+
+  <!-- Subtle Blueprint Grid -->
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135" />
+    <line x1="0" y1="270" x2="1200" y2="270" />
+    <line x1="0" y1="405" x2="1200" y2="405" />
+    <line x1="0" y1="540" x2="1200" y2="540" />
+    <line x1="200" y1="0" x2="200" y2="675" />
+    <line x1="400" y1="0" x2="400" y2="675" />
+    <line x1="600" y1="0" x2="600" y2="675" />
+    <line x1="800" y1="0" x2="800" y2="675" />
+    <line x1="1000" y1="0" x2="1000" y2="675" />
+  </g>
+
+  <!-- Title Section -->
+  <g transform="translate(60, 42)">
+    <rect x="0" y="0" width="190" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <circle cx="12" cy="13" r="4" fill="#10b981" />
+    <text x="24" y="17" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1">EXECUTION BLUEPRINT</text>
+
+    <text x="0" y="56" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.5">The 6-Step AI Production Framework</text>
+    <text x="0" y="80" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="400">A disciplined engineering roadmap to transition business AI from an isolated prototype to enterprise production.</text>
+  </g>
+
+  <!-- Flow Connector Bar -->
+  <path d="M 120 285 L 1080 285" stroke="#334155" stroke-width="4" stroke-dasharray="8 6" />
+
+  <!-- Container for 6 Cards (2 rows of 3, or 1 row of 6? A 6-card grid with 2 rows of 3 gives large, readable text, or 6 columns?) -->
+  <!-- In 1200px width, 6 cards across: 1200 - 100 = 1100 / 6 = 170px width per card, which makes text tight. 
+       A 2-row layout with 3 cards each (Step 1 -> 2 -> 3, then 4 -> 5 -> 6 with clean connecting snake/arrows) allows generous, comfortable, high-legibility cards! -->
+
+  <!-- Top Row: Steps 1, 2, 3 -->
+  
+  <!-- Step 1 -->
+  <g transform="translate(60, 145)">
+    <rect width="330" height="205" rx="14" fill="url(#cardGrad)" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Number Badge -->
+    <rect x="20" y="20" width="36" height="36" rx="10" fill="url(#step1Grad)" />
+    <text x="38" y="44" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">01</text>
+    <text x="68" y="34" fill="#60a5fa" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="1">PHASE ONE</text>
+    <text x="68" y="52" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="700">Define One Outcome</text>
+
+    <text x="20" y="90" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="600">CORE DELIVERABLE:</text>
+    <text x="20" y="112" fill="#e2e8f0" font-family="sans-serif" font-size="13">Single measurable business problem</text>
+    <text x="20" y="132" fill="#94a3b8" font-family="sans-serif" font-size="12">• Specific user persona &amp; task scope</text>
+    <text x="20" y="152" fill="#94a3b8" font-family="sans-serif" font-size="12">• Current performance baseline</text>
+    <text x="20" y="172" fill="#94a3b8" font-family="sans-serif" font-size="12">• Hard target KPI (accuracy, handling time)</text>
+    <rect x="20" y="184" width="290" height="2" fill="#3b82f6" opacity="0.4" />
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <g transform="translate(400, 240)">
+    <circle cx="10" cy="0" r="14" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <path d="M 6 -4 L 14 0 L 6 4" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Step 2 -->
+  <g transform="translate(435, 145)">
+    <rect width="330" height="205" rx="14" fill="url(#cardGrad)" stroke="#0ea5e9" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Number Badge -->
+    <rect x="20" y="20" width="36" height="36" rx="10" fill="url(#step2Grad)" />
+    <text x="38" y="44" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">02</text>
+    <text x="68" y="34" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="1">PHASE TWO</text>
+    <text x="68" y="52" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="700">Audit Data &amp; Systems</text>
+
+    <text x="20" y="90" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="600">CORE DELIVERABLE:</text>
+    <text x="20" y="112" fill="#e2e8f0" font-family="sans-serif" font-size="13">Data readiness &amp; access scorecard</text>
+    <text x="20" y="132" fill="#94a3b8" font-family="sans-serif" font-size="12">• Verified live sources of truth (ERP/CRM)</text>
+    <text x="20" y="152" fill="#94a3b8" font-family="sans-serif" font-size="12">• Update freshness &amp; sync cadence</text>
+    <text x="20" y="172" fill="#94a3b8" font-family="sans-serif" font-size="12">• Tenant &amp; user permission boundaries</text>
+    <rect x="20" y="184" width="290" height="2" fill="#0ea5e9" opacity="0.4" />
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <g transform="translate(775, 240)">
+    <circle cx="10" cy="0" r="14" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <path d="M 6 -4 L 14 0 L 6 4" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Step 3 -->
+  <g transform="translate(810, 145)">
+    <rect width="330" height="205" rx="14" fill="url(#cardGrad)" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Number Badge -->
+    <rect x="20" y="20" width="36" height="36" rx="10" fill="url(#step3Grad)" />
+    <text x="38" y="44" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">03</text>
+    <text x="68" y="34" fill="#818cf8" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="1">PHASE THREE</text>
+    <text x="68" y="52" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="700">Design Complete Workflow</text>
+
+    <text x="20" y="90" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="600">CORE DELIVERABLE:</text>
+    <text x="20" y="112" fill="#e2e8f0" font-family="sans-serif" font-size="13">End-to-end architecture blueprint</text>
+    <text x="20" y="132" fill="#94a3b8" font-family="sans-serif" font-size="12">• Input Auth → Retrieval → LLM Reasoning</text>
+    <text x="20" y="152" fill="#94a3b8" font-family="sans-serif" font-size="12">• Business rule checks &amp; safety barriers</text>
+    <text x="20" y="172" fill="#94a3b8" font-family="sans-serif" font-size="12">• Deterministic API execution or human handoff</text>
+    <rect x="20" y="184" width="290" height="2" fill="#6366f1" opacity="0.4" />
+  </g>
+
+  <!-- Bottom Row: Steps 4, 5, 6 -->
+
+  <!-- Step 4 -->
+  <g transform="translate(60, 375)">
+    <rect width="330" height="205" rx="14" fill="url(#cardGrad)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Number Badge -->
+    <rect x="20" y="20" width="36" height="36" rx="10" fill="url(#step4Grad)" />
+    <text x="38" y="44" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">04</text>
+    <text x="68" y="34" fill="#a78bfa" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="1">PHASE FOUR</text>
+    <text x="68" y="52" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="700">Test Realistic Scenarios</text>
+
+    <text x="20" y="90" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="600">CORE DELIVERABLE:</text>
+    <text x="20" y="112" fill="#e2e8f0" font-family="sans-serif" font-size="13">Edge-case stress testing dataset</text>
+    <text x="20" y="132" fill="#94a3b8" font-family="sans-serif" font-size="12">• Incomplete queries &amp; contradictory docs</text>
+    <text x="20" y="152" fill="#94a3b8" font-family="sans-serif" font-size="12">• Prompt injection &amp; sensitive leakage checks</text>
+    <text x="20" y="172" fill="#94a3b8" font-family="sans-serif" font-size="12">• Database timeout &amp; fallback recovery tests</text>
+    <rect x="20" y="184" width="290" height="2" fill="#8b5cf6" opacity="0.4" />
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <g transform="translate(400, 470)">
+    <circle cx="10" cy="0" r="14" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <path d="M 6 -4 L 14 0 L 6 4" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Step 5 -->
+  <g transform="translate(435, 375)">
+    <rect width="330" height="205" rx="14" fill="url(#cardGrad)" stroke="#ec4899" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Number Badge -->
+    <rect x="20" y="20" width="36" height="36" rx="10" fill="url(#step5Grad)" />
+    <text x="38" y="44" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">05</text>
+    <text x="68" y="34" fill="#f472b6" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="1">PHASE FIVE</text>
+    <text x="68" y="52" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="700">Launch With Oversight</text>
+
+    <text x="20" y="90" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="600">CORE DELIVERABLE:</text>
+    <text x="20" y="112" fill="#e2e8f0" font-family="sans-serif" font-size="13">Staged human-in-the-loop rollout</text>
+    <text x="20" y="132" fill="#94a3b8" font-family="sans-serif" font-size="12">• Read &amp; recommend stage first</text>
+    <text x="20" y="152" fill="#94a3b8" font-family="sans-serif" font-size="12">• Human review for sensitive transactions</text>
+    <text x="20" y="172" fill="#94a3b8" font-family="sans-serif" font-size="12">• Automated execution unlocked gradually</text>
+    <rect x="20" y="184" width="290" height="2" fill="#ec4899" opacity="0.4" />
+  </g>
+
+  <!-- Arrow 5 -> 6 -->
+  <g transform="translate(775, 470)">
+    <circle cx="10" cy="0" r="14" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <path d="M 6 -4 L 14 0 L 6 4" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Step 6 -->
+  <g transform="translate(810, 375)">
+    <rect width="330" height="205" rx="14" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- Number Badge -->
+    <rect x="20" y="20" width="36" height="36" rx="10" fill="url(#step6Grad)" />
+    <text x="38" y="44" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">06</text>
+    <text x="68" y="34" fill="#34d399" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="1">PHASE SIX</text>
+    <text x="68" y="52" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="700">Monitor &amp; Improve</text>
+
+    <text x="20" y="90" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="600">CORE DELIVERABLE:</text>
+    <text x="20" y="112" fill="#e2e8f0" font-family="sans-serif" font-size="13">Operational telemetry &amp; ownership</text>
+    <text x="20" y="132" fill="#94a3b8" font-family="sans-serif" font-size="12">• Track cost per successful task (TCO)</text>
+    <text x="20" y="152" fill="#94a3b8" font-family="sans-serif" font-size="12">• Human override &amp; escalation analytics</text>
+    <text x="20" y="172" fill="#94a3b8" font-family="sans-serif" font-size="12">• Weekly drift auditing &amp; prompt maintenance</text>
+    <rect x="20" y="184" width="290" height="2" fill="#10b981" opacity="0.4" />
+  </g>
+
+  <!-- Bottom Global Takeaway Bar -->
+  <g transform="translate(60, 605)">
+    <rect width="1080" height="42" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="540" y="26" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">
+      <tspan fill="#34d399" font-weight="700">Governance Rule:</tspan> Never graduate to Phase 5 without passing the stress tests in Phase 4. Rigorous evaluation is what prevents silent post-launch failures.
+    </text>
+  </g>
+</svg>

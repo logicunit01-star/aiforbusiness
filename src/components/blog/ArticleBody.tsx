@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Article, ArticleFaq } from '@/types/article';
 import { HelpCircle, Sparkles, ArrowRight, MessageSquareQuote } from 'lucide-react';
+import AiReadinessCalculator from './AiReadinessCalculator';
 
 interface ArticleBodyProps {
   htmlContent: string;
@@ -9,13 +10,33 @@ interface ArticleBodyProps {
 }
 
 export default function ArticleBody({ htmlContent, faqs, suggestedInContent }: ArticleBodyProps) {
+  // Check if interactive calculator is embedded via placeholder
+  const calculatorPlaceholder = /<div id=["']ai-readiness-calculator["']>\s*<\/div>/i;
+  const hasCalculator = calculatorPlaceholder.test(htmlContent);
+  const parts = hasCalculator ? htmlContent.split(calculatorPlaceholder) : [htmlContent];
+
   return (
     <div className="w-full">
-      {/* Main Prose Content */}
+      {/* Main Prose Content Part 1 */}
       <div
         className="article-prose w-full max-w-none"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
+        dangerouslySetInnerHTML={{ __html: parts[0] }}
       />
+
+      {/* Embedded Interactive Tool */}
+      {hasCalculator && (
+        <>
+          <div className="my-10">
+            <AiReadinessCalculator />
+          </div>
+          {parts[1] && (
+            <div
+              className="article-prose w-full max-w-none"
+              dangerouslySetInnerHTML={{ __html: parts[1] }}
+            />
+          )}
+        </>
+      )}
 
       {/* In-Article Recommended Read Card */}
       {suggestedInContent && (
@@ -50,7 +71,7 @@ export default function ArticleBody({ htmlContent, faqs, suggestedInContent }: A
             Frequently Asked Questions
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-6">
-            Key Takeaways & Common Questions
+            Key Takeaways &amp; Common Questions
           </h2>
 
           <div className="space-y-4">
